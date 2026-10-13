@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EmailJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("template_abqtvhq"); // function enviarCorreo(e) {       e.preventDefault(); // evitar recarga del form               emailjs.send("service_wdqr55m", "template_s9yt962", {       /*emailjs.send("service_xxx", "template_xxx", {*/         from_name: document.getElementById("nombre").value,         from_email: document.getElementById("email").value,         message: document.getElementById("mensaje").value       })       .then((res) => {         alert("Correo enviado correctamente!");         console.log("Respuesta:", res);       })       .catch((err) => {         alert("Error al enviar el correo.");         console.error("Error:", err);       });      }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="function.js" defer></script>
+</head>
+
+<body>
+    <h2>Formulario </h2>
+    <h3>Ingresa un correo y envia un mensaje</h3>
+    <form onsubmit="enviarCorreo(event)">
+
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" autocomplete="name" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" autocomplete="email" required><br><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" autocomplete="off" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+
+</body>
+
+</html>
